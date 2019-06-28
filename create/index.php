@@ -6,9 +6,9 @@ $detail = $_POST["detail"];
 $sql = "INSERT INTO articles (title , detail) VALUES ( '$title' , '$detail' )";
 
 if ($conn->query($sql) === true) {
-    echo "New record created successfully";
+    echo json_encode(['message' => "Created Article Successfully"]);
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo json_encode(['message' => "Error: " . $conn->error]);
 }
 
 $conn->close();

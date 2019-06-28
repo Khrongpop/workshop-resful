@@ -6,6 +6,8 @@ $dbname = "iosworkshop";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
+mysqli_set_charset($conn, "utf8");
+header('Content-Type: application/json; charset=utf-8');
 
 // Check connection
 if ($conn->connect_error) {
